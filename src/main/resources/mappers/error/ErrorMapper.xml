@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.central.webboard.utils.globalException.mapper.ErrorMapper">
+    <resultMap id="ErrorLogResultMap" type="com.central.webboard.utils.globalException.domain.ErrorLog">
+        <id property="id" column="ID" />
+        <result property="uri" column="URI" />
+        <result property="method" column="METHOD" />
+        <result property="message" column="MESSAGE" />
+        <result property="stackTrace" column="STACK_TRACE" />
+        <result property="createdAt" column="CREATED_AT" />
+    </resultMap>
+
+    <insert id="save" parameterType="com.central.webboard.utils.globalException.domain.ErrorLog" >
+        <selectKey>
+
+        </selectKey>
+        INSERT INTO error_log(
+            ID, URI, METHOD, MESSAGE, STACK_TRACE, CREATED_AT
+        )
+        VALUES (#{uri}, #{method}, #{message}, #{stackTrace}, #{createdAt})
+    </insert>
+
+
+
+</mapper>
