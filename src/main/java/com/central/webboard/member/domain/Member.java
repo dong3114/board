@@ -9,9 +9,10 @@ import lombok.*;
 @NoArgsConstructor
 public class Member {
     private String memberCode;
-    private String memberName;
-    private String memberPassword;
+    private String memberId;
+    private String memberPw;
     private String memberNick;
     private String memberEmail;
     private String memberCreateAt;
+    private int roleNumber;
 }
